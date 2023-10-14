@@ -7,6 +7,8 @@ TagManager:
   - KillObj
   - WinLevel
   - Coin
+  - Interactive
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,7 @@ public class PlayerDeath : MonoBehaviour
         player.SetActive(false);
         flash.SetActive(true);
         lossPanel.SetActive(true);
+        TimerScript.StopTimer();
         WildBall.Inputs.PlayerMovement.TurnOffUnderControl();
         
         //panelMenu.GameMenuScript.PressedGameMenuExpceptContinue();

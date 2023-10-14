@@ -7,12 +7,14 @@ public class LevelComplete : MonoBehaviour
     public GameObject WinPanel;
     public GameObject fullWinPanel;
     public GameObject fireWork;
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             WildBall.Inputs.PlayerMovement.TurnOffUnderControl();
+            TimerScript.StopTimer();
 
             if (ScenesManager.LastSceneCheck())
             {

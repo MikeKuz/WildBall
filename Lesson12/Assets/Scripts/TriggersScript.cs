@@ -35,7 +35,10 @@ public class TriggersScript : MonoBehaviour
         {
             CoinCounter.instance.AddCoin();
         }
-
+        if(other.CompareTag("Ground"))
+        {
+            //PlayerMovement.TurnOnJump();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -44,6 +47,11 @@ public class TriggersScript : MonoBehaviour
         {
             Interactive = false;
             textPressE.SetActive(false);
+        }
+        
+        if(other.CompareTag("Ground"))
+        {
+            //PlayerMovement.TurnOffJump();
         }
     }
 }

@@ -16,11 +16,15 @@ public class ScenesManager : MonoBehaviour
     static public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        TimerScript.RestartTimer();
+
     }
 
     public void SelectLevel()
     {
         SceneManager.LoadScene(index);
+        TimerScript.RestartTimer();
+
     }
 
     public void LoadNextLevel()
@@ -30,6 +34,7 @@ public class ScenesManager : MonoBehaviour
         if (lastLevel==false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            TimerScript.RestartTimer();
         }
 
         else if (lastLevel)

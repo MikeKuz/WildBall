@@ -12,6 +12,7 @@ namespace WildBall.Inputs
         [SerializeField, Range(0, 20)] private float JumpPoewr = 2.0f;
         private Rigidbody playerRigidbody;
         static public bool underControl = true;
+        static bool jumpIsOn = false;
 
         private void Awake()
         {
@@ -31,7 +32,10 @@ namespace WildBall.Inputs
         {
             if (underControl == true)
             {
-                playerRigidbody.AddForce(new Vector3(0, 100, 0) * JumpPoewr);
+                if(jumpIsOn)
+                {
+                    playerRigidbody.AddForce(new Vector3(0, 100, 0) * JumpPoewr);
+                }
             }
         }
 
@@ -45,5 +49,14 @@ namespace WildBall.Inputs
             underControl = true;
         }
 
+        static public void TurnOffJump()
+        {
+            jumpIsOn = false;
+        }
+
+        static public void TurnOnJump()
+        {
+            jumpIsOn = true;
+        }
     }
 }
